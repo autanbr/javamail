@@ -1,0 +1,45 @@
+﻿@model Aula10.Models.Usuario
+@{
+    ViewBag.Title = "Incluir Usuário";
+}
+
+<h2>Incluir Usuário</h2>
+@using (Html.BeginForm())
+{
+  @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>Usuário</h4>
+        @Html.LabelFor(model => model.Nome) <br />
+        @Html.EditorFor(model => model.Nome) 
+        @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })<br />
+
+        @Html.LabelFor(model => model.CEP) <br />
+        @Html.EditorFor(model => model.CEP) 
+        @Html.ValidationMessageFor(model => model.CEP,"", new {@class = "text-danger"})<br />
+
+        @Html.LabelFor(model => model.Email) <br />
+        @Html.EditorFor(model => model.Email) 
+        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })<br />
+
+        @Html.LabelFor(model => model.DataNascimento) <br />
+        @Html.EditorFor(model => model.DataNascimento) 
+        @Html.ValidationMessageFor(model => model.DataNascimento, "", new { @class = "text-danger" })<br />
+
+        @Html.LabelFor(model => model.Senha) <br />
+        @Html.EditorFor(model => model.Senha) 
+        @Html.ValidationMessageFor(model => model.Senha, "", new { @class = "text-danger" })<br />
+
+        @Html.LabelFor(model => model.SenhaRepetir) <br />
+        @Html.EditorFor(model => model.SenhaRepetir) 
+        @Html.ValidationMessageFor(model => model.SenhaRepetir, "", new { @class = "text-danger" })<br />
+
+        <div class="form-group">
+            <br />
+            <input type="submit" value="Incluir" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+<div>@Html.ActionLink("Listar","Index")</div>
+@section Scripts {@Scripts.Render("~/bundles/jqueryval")}
+

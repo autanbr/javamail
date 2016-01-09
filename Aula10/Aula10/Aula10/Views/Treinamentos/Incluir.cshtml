@@ -1,0 +1,46 @@
+﻿@model Aula10.Models.Treinamento
+@{
+    ViewBag.Title = "Incluir Treinamento";
+}
+ 
+<h2>Incluir Treinamento</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <h4>Cadastro</h4>
+        @Html.LabelFor(model => model.Treinammento) <br />
+        @Html.EditorFor(model => model.Treinammento)
+        @Html.ValidationMessageFor(model => model.Treinammento, "", new { @class = "text-danger" })<br />
+
+        @Html.LabelFor(model => model.Inicio) <br />
+        @Html.EditorFor(model => model.Inicio)
+        @Html.ValidationMessageFor(model => model.Inicio, "", new { @class = "text-danger" })<br />
+
+        @Html.LabelFor(model => model.Termino) <br />
+        @Html.EditorFor(model => model.Termino)
+        @*@Html.JQueryUI().DatepickerFor(model => model.Termino)*@
+        @Html.ValidationMessageFor(model => model.Termino, "", new { @class = "text-danger" })<br />
+
+        @Html.LabelFor(model => model.Preco) <br />
+        @Html.EditorFor(model => model.Preco)
+        @Html.ValidationMessageFor(model => model.Preco, "", new { @class = "text-danger" })<br />
+
+        @Html.LabelFor(model => model.Desconto) <br />
+        @Html.EditorFor(model => model.Desconto)
+        @Html.ValidationMessageFor(model => model.Desconto, "", new { @class = "text-danger" })<br />
+
+        @Html.LabelFor(model => model.Local) <br />
+        @Html.EditorFor(model => model.Local)
+        @Html.ValidationMessageFor(model => model.Local, "", new { @class = "text-danger" })<br />
+
+
+        <div class="form-group">
+            <br />
+            <input type="submit" value="Incluir" class="btn btn-default" />
+        </div>
+    </div>
+}
+
+<div>@Html.ActionLink("Listar", "Index")</div>
+@section Scripts {@Scripts.Render("~/bundles/jqueryval")}
